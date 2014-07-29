@@ -25,7 +25,7 @@ group :production do
 end
 
 # bootstrap
-#gem 'twitter-bootstrap-rails', git: 'http://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+gem 'twitter-bootstrap-rails'#, git: 'http://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 
 gem 'awesome_print'
 gem 'httparty'
