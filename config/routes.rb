@@ -16,6 +16,12 @@ Blog::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
+  # constraints(:host => "www.sancho.ck.ua") do
+  #   match "(*x)" => redirect { |params, request|
+  #     URI.parse(request.url).tap { |x| x.host = "sancho.ck.ua" }.to_s
+  #   }
+  # end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
