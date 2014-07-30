@@ -19,15 +19,11 @@ group :assets do
 
   # Use CoffeeScript for .js.coffee assets and views
   gem 'coffee-rails', '~> 4.0.0'
-
 end
 
 group :production do
   gem 'pg'
 end
-
-# bootstrap
-gem 'twitter-bootstrap-rails'#, github: 'http://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
 
 gem 'awesome_print'
 gem 'httparty'
@@ -50,6 +46,10 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
+
+
+# bootstrap
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
 
 # Use unicorn as the app server
 # gem 'unicorn'
