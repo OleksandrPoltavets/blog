@@ -49,7 +49,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 
 # bootstrap
-gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
+#gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'bootstrap3'
+gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :branch => 'bootstrap3'
 
 # Use unicorn as the app server
 # gem 'unicorn'
