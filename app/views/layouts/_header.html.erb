@@ -16,6 +16,7 @@
                 <%= menu_item "Log Out", logout_path %>
             <% else %>
                 <%= menu_item "Log In", login_path%>
+                <%= menu_item "Log In with Facebook", "/auth/facebook", id: "sign_in"%>
                 <%= menu_item "Sign Up", signup_path %>
             <% end %>
     <% end %>

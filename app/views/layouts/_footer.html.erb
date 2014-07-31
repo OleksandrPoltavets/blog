@@ -3,6 +3,7 @@
   <div id="copyright">2014 &copy;
     <%= link_to 'Sancho', '#', title: '---', target: '_blank' %>
   </div>
+  <small>Сегодня: <%= date_text %> | Ваш IP: <%= request.remote_ip %></small>
     <%= debug(params) if Rails.env.development? %>
     <%= debug(flash) if Rails.env.development? unless flash.empty? %>
 </footer>

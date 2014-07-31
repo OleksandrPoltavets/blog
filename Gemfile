@@ -51,6 +51,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # bootstrap
 gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :branch => 'bootstrap3'
 
+gem 'omniauth-facebook'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
