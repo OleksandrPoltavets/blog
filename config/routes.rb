@@ -10,10 +10,10 @@ Blog::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  #get "home", to: 'pages#home', as: 'home'
+  get 'about', to: 'pages#about', as: 'about'
+  get 'contacts', to: 'pages#contacts', as: 'contacts'
 
-  get "pages/home"
-  get "pages/about"
-  get "pages/contacts"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,9 +1,12 @@
 <footer>
   <hr>
-  <div id="copyright">2014 &copy;
-    <%= link_to 'Sancho', '#', title: '---', target: '_blank' %>
+  <div id="copyright" class="pull-left">2014 &copy;
+    <%= mail_to 'sancho.ck@gmail.com', 'Sancho', title: 'Email Me', subject:'Sancho Blog', target: '_blank' %>
   </div>
-  <small>Сегодня: <%= date_text %> | Ваш IP: <%= request.remote_ip %></small>
+  <div id="footer-right" class="pull-right">
+    <small>Today is: <%= date_text %> | Your IP: <%= request.remote_ip %></small>
+  </div>
+    <%= raw('<div class="clearfix"></div>') if Rails.env.development?%>
     <%= debug(params) if Rails.env.development? %>
     <%= debug(flash) if Rails.env.development? unless flash.empty? %>
 </footer>

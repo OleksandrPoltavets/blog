@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731201158) do
+ActiveRecord::Schema.define(version: 20140731194944) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140731201158) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "uid",              limit: 255
+    t.integer  "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
   end

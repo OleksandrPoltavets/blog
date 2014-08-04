@@ -7,8 +7,8 @@
             <% #menu_item "Things that won't suit you anyway", '#' %>
             <% #menu_item "Things you're not even cool enough to buy anyway", '#' %>
         <% #end %>
-        <%= menu_item "About Us", pages_about_path %>
-        <%= menu_item "Contact", pages_contacts_path %>
+        <%= menu_item "About Us", about_path %>
+        <%= menu_item "Contact", contacts_path %>
     <% end %>
     <%= menu_group :pull => :right do %>
             <% if current_user %>
