@@ -3,7 +3,7 @@
 
 <%= render 'shared/post_form' %>
 
-<% if @posts %>
+<% if @posts.any? %>
   <div class="posts">
     <% @posts.each do |post| %>
       <ul>
