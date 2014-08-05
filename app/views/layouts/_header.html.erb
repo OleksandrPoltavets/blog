@@ -1,6 +1,8 @@
 <%= nav_bar :static => :top, :brand => "Sancho BLOG", :responsive => true do %>
     <%= menu_group do %>
-        <%= menu_item "Home", root_path %>
+        <%= menu_item root_path do %>
+            <i class="fa fa-home"></i> Home
+        <% end %>
         <%= menu_divider %>
         <% #drop_down "Products" do %>
             <% #menu_item "Things you can't afford", '#' %>
@@ -12,12 +14,22 @@
     <% end %>
     <%= menu_group :pull => :right do %>
             <% if current_user %>
-                <%= menu_item "#{current_user.name} (#{current_user.email})", edit_user_path(current_user) %>
-                <%= menu_item "Log Out", logout_path %>
+                <%= menu_item edit_user_path(current_user) do %>
+                    <i class="fa fa-user"></i> <%= "#{current_user.name} (#{current_user.email})" %>
+                <% end %>
+                <%= menu_item logout_path do %>
+                    <i class="fa fa-sign-out"></i> Log Out
+                <% end %>
             <% else %>
-                <%= menu_item "Log In", login_path%>
-                <%= menu_item "Log In with Facebook", "/auth/facebook", id: "sign_in"%>
-                <%= menu_item "Sign Up", signup_path %>
+                <%= menu_item login_path do %>
+                    <i class="fa fa-sign-in"></i> Log In
+                <% end %>
+                <%= menu_item "/auth/facebook", id: "sign_in" do %>
+                    <i class="fa fa-facebook-square"></i> Log In with Facebook
+                <% end %>
+                <%= menu_item signup_path do %>
+                    <i class="fa fa-magic"></i> Create Account
+                <% end %>
             <% end %>
     <% end %>
 <% end %>

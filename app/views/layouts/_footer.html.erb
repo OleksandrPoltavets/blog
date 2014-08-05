@@ -1,9 +1,9 @@
 <footer>
   <hr>
-  <div id="copyright" class="pull-left">2014 &copy;
+  <div id="copyright" class="pull-right">2014 &copy;
     <%= mail_to 'sancho.ck@gmail.com', 'Sancho', title: 'Email Me', subject:'Sancho Blog', target: '_blank' %>
   </div>
-  <div id="footer-right" class="pull-right">
+  <div id="footer-right" class="pull-left">
     <small>Today is: <%= date_text %> | Your IP: <%= request.remote_ip %></small>
   </div>
     <%= raw('<div class="clearfix"></div>') if Rails.env.development?%>

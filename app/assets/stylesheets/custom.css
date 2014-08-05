@@ -1,3 +1,7 @@
 /*#footer-right {*/
     /*float: right;*/
 /*}*/
+
+.bold_text {
+    font-weight: bold;
+}
