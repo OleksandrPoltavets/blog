@@ -3,12 +3,12 @@
 
 <%= render 'shared/post_form' %>
 
-<% if @posts.any? %>
+<% if @posts %>
   <div class="posts">
     <% @posts.each do |post| %>
       <ul>
         <hr>
-        <li>Post: #<%= post.id %> | Content: <%= post.content %> <small class="pull-right">Posted: <%= time_ago_in_words(post.created_at) %> ago.</small></li>
+        <li>Post: #<%= post.id %> | Content: <%= post.content %> <small class="pull-right">| <%= link_to 'delete', post, method: :delete, data: {confirm: "Sure?"}, title: post.content %> | Posted: <%= time_ago_in_words(post.created_at) %> ago.</small></li>
       </ul>
     <% end %>
   </div>
