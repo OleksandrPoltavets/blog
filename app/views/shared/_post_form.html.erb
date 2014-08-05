@@ -1,0 +1,9 @@
+<%= form_for(@post) do |p| %>
+    <div class="form-group">
+        <%= p.label :content, 'Post content:' %>
+        <%= p.text_area :content, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= p.submit "Add Post", class: 'btn btn-primary' %>
+    </div>
+<% end %>

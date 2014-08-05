@@ -21,14 +21,14 @@
                     <i class="fa fa-sign-out"></i> Log Out
                 <% end %>
             <% else %>
-                <%= menu_item login_path do %>
-                    <i class="fa fa-sign-in"></i> Log In
+                <%= menu_item signup_path do %>
+                    <i class="fa fa-magic"></i> Create Account
                 <% end %>
                 <%= menu_item "/auth/facebook", id: "sign_in" do %>
                     <i class="fa fa-facebook-square"></i> Log In with Facebook
                 <% end %>
-                <%= menu_item signup_path do %>
-                    <i class="fa fa-magic"></i> Create Account
+                <%= menu_item login_path do %>
+                    <i class="fa fa-sign-in"></i> Log In
                 <% end %>
             <% end %>
     <% end %>

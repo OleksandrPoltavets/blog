@@ -1,2 +1,15 @@
 <h1>Welcome to Sancho Blog!</h1>
 <h3>This site is currently under development.</h3>
+
+<%= render 'shared/post_form' %>
+
+<% if @posts.any? %>
+  <div class="posts">
+    <% @posts.each do |post| %>
+      <ul>
+        <hr>
+        <li>Post: #<%= post.id %> | Content: <%= post.content %> <small class="pull-right">Posted: <%= time_ago_in_words(post.created_at) %> ago.</small></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

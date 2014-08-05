@@ -1,6 +1,9 @@
 Blog::Application.routes.draw do
+  get "posts/create"
+  get "posts/destroy"
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :posts, only: [:create, :destroy]
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure',            to: redirect('/'),     via: [:get, :post]
