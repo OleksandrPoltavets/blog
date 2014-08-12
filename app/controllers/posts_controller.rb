@@ -25,6 +25,9 @@ class PostsController < ApplicationController
 
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_url if @post.nil?
+    if @post.nil?
+      redirect_to root_url
+      flash[:error] = "You cannot delete this post!"
+    end
   end
 end

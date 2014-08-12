@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1>Create new user</h1>
 
 <%= form_for @user, :html => { :class => 'form'} do |f| %>
     <% if @user.errors.any? %>
@@ -28,5 +28,5 @@
       <%= f.label :password_confirmation, class: 'label-form' %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
-    <div class="actions"><%= f.submit "Sign Up", class: 'btn btn-primary' %></div>
+    <div class="actions"><%= f.submit "Create", class: 'btn btn-primary' %></div>
 <% end %>
