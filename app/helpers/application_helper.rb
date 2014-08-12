@@ -6,4 +6,5 @@ module ApplicationHelper
     date_today = "#{time.day}.#{time.month}.#{time.year}"
   end
 
+
 end

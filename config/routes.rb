@@ -1,6 +1,5 @@
 Blog::Application.routes.draw do
-  get "posts/create"
-  get "posts/destroy"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts, only: [:create, :destroy]
