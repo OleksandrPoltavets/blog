@@ -28,5 +28,11 @@
       <%= f.label :password_confirmation, class: 'label-form' %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
+    <% if current_user.admin? %>
+        <div class="form-group">
+          <%= f.check_box :admin %>
+          <%= f.label :admin, "admin?", class: 'label-form' %>
+        </div>
+    <% end %>
     <div class="actions"><%= f.submit "Save", class: 'btn btn-primary' %></div>
 <% end %>

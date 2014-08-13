@@ -1,0 +1,32 @@
+<h2>Trips: <span class="pull-right"><%= link_to "New", new_trip_url, class: 'btn btn-primary btn-sm'%></span></h2>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Who</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Mileage</th>
+    <th>Started</th>
+    <th>Finished</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @trips.each do |t| %>
+      <tr>
+        <td><%= t.id %></td>
+        <td><%= t.user ? t.user.name : "Unknown"%></td>
+        <td><%= t.city_from %></td>
+        <td><%= t.city_to %></td>
+        <td><%= t.mileage %> km.</td>
+        <td><%= t.start %></td>
+        <td><%= t.finish %></td>
+        <td><%= link_to "edit", edit_trip_path(t.id) %></td>
+        <td><%= link_to "delete", trip_path(t.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       t.string :content
-      t.boolean :published
+      t.boolean :published, :default => true
       t.integer :user_id
 
       t.timestamps

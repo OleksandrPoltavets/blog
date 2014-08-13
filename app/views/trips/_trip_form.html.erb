@@ -1,0 +1,33 @@
+<%= form_for @trip, :html => { :class => 'form'} do |f| %>
+    <% if @trip.errors.any? %>
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% @trip.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :city_from, class: 'label-form' %>
+      <%= f.text_field :city_from, class: 'form-control', required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :city_to, class: 'label-form' %>
+      <%= f.text_field :city_to, class: 'form-control', required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :mileage, class: 'label-form' %>
+      <%= f.text_field :mileage, class: 'form-control', required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :start, class: 'label-form' %>
+      <%= f.datetime_select :start, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :finish, class: 'label-form' %>
+      <%= f.datetime_select :finish, class: 'form-control' %>
+    </div>
+    <div class="actions"><%= f.submit class: 'btn btn-primary' %></div>
+<% end %>
