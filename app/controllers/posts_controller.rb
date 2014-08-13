@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
 
   def create
     @post = current_user.posts.build(post_params)
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to root_url
     else
-      flash[:danger] = "Type sype text first!"
+      flash[:danger] = "Type some text first!"
       redirect_to root_url
     end
   end
