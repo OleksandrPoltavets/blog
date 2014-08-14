@@ -1,32 +1,85 @@
 <h2>Trips: <span class="pull-right"><%= link_to "New", new_trip_url, class: 'btn btn-primary btn-sm'%></span></h2>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+        <i class="fa fa-filter"></i> <strong>Filter</strong>
+      </a>
+    </h4>
+  </div>
+  <div id="collapseTwo" class="panel-collapse collapse <%= raw('in') if params.count > 2 %>">
+    <div class="panel-body">
+      <%= form_tag trips_path, { method: :get, class: 'form-inline' } do %>
+          <div class="form-group">
+            <%= label_tag :city_from,
+                          'City From:', class: 'control-label' %>
+            <%= select_tag :city_from,
+                           options_for_select(@trips.collect { |t| [t.city_from] }.uniq,
+                                              params[:city_from]),
+                           include_blank: true,
+                           class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= label_tag :city_to,
+                          'City To:', class: 'control-label' %>
+            <%= select_tag :city_to,
+                           options_for_select(@trips.collect { |t| [t.city_to] }.uniq,
+                                              params[:city_to]),
+                           include_blank: true,
+                           class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= label_tag :date,
+                          'Date:', class: 'control-label' %>
+            <%= date_field_tag :date, params[:date], class: 'form-control'%>
+          </div>
+
+          <div class="form-group">
+            <%= submit_tag 'Fiter', name: nil, class: 'btn btn-primary'%>
+          </div>
+          <div class="form-group">
+            <%= link_to 'Clear', trips_path, class: 'btn btn-info' %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <table class="table table-hover">
   <thead>
   <tr>
-    <th>ID</th>
-    <th>Who</th>
+    <th>#</th>
+    <%= raw('<th>Who</th>') if current_user.admin? %>
     <th>From</th>
     <th>To</th>
     <th>Mileage</th>
-    <th>Started</th>
-    <th>Finished</th>
+    <th>Trip date</th>
+    <th>Cost (UAH)</th>
     <th></th>
     <th></th>
   </tr>
   </thead>
   <tbody>
+  <% @total = 0 %>
   <% @trips.each do |t| %>
+    <% @total += (t.fuel_avg/100*t.mileage)*t.fuel_price %>
       <tr>
-        <td><%= t.id %></td>
-        <td><%= t.user ? t.user.name : "Unknown"%></td>
+        <td><%= link_to t.id, trip_path(t.id) %></td>
+        <% if current_user.admin?%>
+            <td><%= t.user ? t.user.name : "Unknown"%></td>
+        <% end %>
         <td><%= t.city_from %></td>
         <td><%= t.city_to %></td>
         <td><%= t.mileage %> km.</td>
-        <td><%= t.start %></td>
-        <td><%= t.finish %></td>
+        <td><%= t.start.strftime("%d.%m.%Y") %></td>
+        <td><%= t.fuel_avg && t.mileage && t.fuel_price ? ((t.fuel_avg/100*t.mileage)*t.fuel_price).round(2) : "---" %></td>
         <td><%= link_to "edit", edit_trip_path(t.id) %></td>
         <td><%= link_to "delete", trip_path(t.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
+<div class="pull-right">
+  Total cost: <strong><%= @total.round(2) %></strong> UAH
+</div>

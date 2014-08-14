@@ -15,3 +15,9 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(
+    $('.double').click(function () {
+        $('#trip_mileage').text('---');
+    })
+);

@@ -14,6 +14,7 @@ class TripsController < ApplicationController
 
   def index
     current_user.admin? ? @trips = Trip.all : @trips = Trip.where(user_id: current_user.id)
+
   end
 
   def edit
@@ -47,6 +48,6 @@ class TripsController < ApplicationController
   private
 
     def trip_params
-      params.require(:trip).permit(:user_id, :city_from, :city_to, :mileage, :start, :finish)
+      params.require(:trip).permit(:user_id, :city_from, :city_to, :mileage, :start, :finish, :fuel_avg, :fuel_price, :comments)
     end
 end

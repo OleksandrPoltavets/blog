@@ -5,3 +5,8 @@
 .bold_text {
     font-weight: bold;
 }
+
+#total_cost {
+    font-weight: bold;
+    color: red;
+}

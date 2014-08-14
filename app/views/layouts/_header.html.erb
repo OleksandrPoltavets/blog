@@ -16,7 +16,7 @@
             <% if current_user %>
 
                 <%= menu_divider %>
-                <%= drop_down raw('<i class="fa fa-user"></i>')+" #{current_user.name} (#{current_user.email})" do %>
+                <%= drop_down raw('<i class="fa fa-user"></i>')+" #{current_user.name}" do %>
                     <%= menu_item "Edit profile", edit_user_path(current_user) %>
                     <%= menu_item "Create trip", create_trip_path %>
                     <%= menu_item admin? ? "Trips" : "My Trips", trips_path %>
