@@ -1,4 +1,4 @@
-<h2>Edit trip "<%= @trip.id %>" :</h2>
+<h2>Edit trip: <span class="label label-info"><%= @trip.id %></span></h2>
 
 <%= form_for @trip, :html => { :class => 'form'} do |f| %>
     <% if @trip.errors.any? %>

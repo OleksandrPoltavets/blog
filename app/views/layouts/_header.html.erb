@@ -17,9 +17,9 @@
 
                 <%= menu_divider %>
                 <%= drop_down raw('<i class="fa fa-user"></i>')+" #{current_user.name}" do %>
-                    <%= menu_item "Edit profile", edit_user_path(current_user) %>
-                    <%= menu_item "Create trip", create_trip_path %>
-                    <%= menu_item admin? ? "Trips" : "My Trips", trips_path %>
+                    <%= menu_item raw('<i class="fa fa-edit"></i>')+" Edit profile", edit_user_path(current_user) %>
+                    <%= menu_item raw('<i class="fa fa-plus"></i>')+" Create trip", create_trip_path %>
+                    <%= menu_item admin? ? raw('<i class="fa fa-car"></i>')+" Trips" : raw('<i class="fa fa-car"></i>')+" My Trips", trips_path %>
                     <%= menu_divider %>
                     <% if admin? %>
                         <%= menu_item users_path do %>
