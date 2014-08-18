@@ -20,8 +20,8 @@
       <%= f.text_field :city_to, class: 'form-control', required: true %>
     </div>
     <div class="form-group">
-      <%= f.label :mileage, class: 'label-form' %>
-      <%= f.text_field :mileage, class: 'form-control', required: true %>
+      <%= f.label :mileage, 'Total mileage (km)', class: 'label-form' %> <a class="btn btn-xs btn-warning double">calculate x2</a>
+      <%= f.text_field :mileage, class: 'form-control calculable', required: true %>
     </div>
     <div class="form-group">
       <%= f.label :start, 'Trip date:', class: 'label-form' %>
@@ -29,11 +29,11 @@
     </div>
     <div class="form-group">
       <%= f.label :fuel_avg, 'Fuel L/100km:', class: 'label-form' %>
-      <%= f.text_field :fuel_avg, class: 'form-control' %>
+      <%= f.text_field :fuel_avg, class: 'form-control calculable' %>
     </div>
     <div class="form-group">
       <%= f.label :fuel_price, 'Fuel price/1L:', class: 'label-form' %>
-      <%= f.text_field :fuel_price, class: 'form-control'%>
+      <%= f.text_field :fuel_price, class: 'form-control calculable'%>
     </div>
     <div class="form-group">
       <%= f.label :comments, 'Comments:', class: 'label-form' %>
@@ -45,5 +45,6 @@
     </div>
     <div class="form-group">
       <%= f.submit class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', trips_path, class: 'btn btn-primary' %>
     </div>
 <% end %>

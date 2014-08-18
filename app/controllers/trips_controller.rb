@@ -14,7 +14,12 @@ class TripsController < ApplicationController
 
   def index
     current_user.admin? ? @trips = Trip.all : @trips = Trip.where(user_id: current_user.id)
+    conditions = {}
+    conditions[:city_from] = params[:city_from] unless params[:city_from].blank?
+    conditions[:city_to] = params[:city_to] unless params[:city_to].blank?
+    conditions[:start] = params[:date] unless params[:date].blank?
 
+    @trips = @trips.where(conditions)
   end
 
   def edit

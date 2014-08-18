@@ -16,8 +16,25 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(
+
+var ready;
+ready = function () {
     $('.double').click(function () {
-        $('#trip_mileage').text('---');
-    })
-);
+        var mileage_field = $('#trip_mileage');
+        var mileage = mileage_field.val();
+        mileage_field.val(mileage*2).trigger('change');
+    });
+
+    calculate_cost = function () {
+        var fuel_avg = $('#trip_fuel_avg').val();
+        var mileage = $('#trip_mileage').val();
+        var fuel_price = $('#trip_fuel_price').val();
+        var result = ((fuel_avg/100*mileage)*fuel_price).toFixed(2);
+        $('#total_cost').text(result);
+    };
+
+    $('.calculable').change(calculate_cost)
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
