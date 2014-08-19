@@ -14,11 +14,20 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require moment
+//= require bootstrap-datetimepicker
+//= require moment/ru
 //= require_tree .
 
 
 var ready;
 ready = function () {
+
+    $('.datepicker').datetimepicker({
+        pickTime: false,
+        language: 'ru'
+    });
+
     $('.double').click(function () {
         var mileage_field = $('#trip_mileage');
         var mileage = mileage_field.val();
@@ -33,7 +42,8 @@ ready = function () {
         $('#total_cost').text(result);
     };
 
-    $('.calculable').change(calculate_cost)
+    $('.calculable').change(calculate_cost);
+
 };
 
 $(document).ready(ready);

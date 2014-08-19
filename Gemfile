@@ -48,8 +48,11 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # bootstrap
 gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :branch => 'bootstrap3'
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.1.1'
 
 gem 'omniauth-facebook'
+#gem 'typeahead-addresspicker-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

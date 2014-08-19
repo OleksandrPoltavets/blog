@@ -29,7 +29,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     if @trip.update_attributes(trip_params)
-      flash[:success] = "Trip updated"
+      flash[:success] = "Trip \"#{@trip.id}\" updated!"
       redirect_to trips_url
     else
       render 'edit'
