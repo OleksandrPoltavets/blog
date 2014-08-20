@@ -26,6 +26,7 @@ ready = function () {
     $('.datepicker').datetimepicker({
         pickTime: false,
         language: 'ru'
+        //daysOfWeekDisabled:[0,6]
     });
 
     $('.double').click(function () {

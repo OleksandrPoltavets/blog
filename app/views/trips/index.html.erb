@@ -32,12 +32,11 @@
           <div class="form-group">
             <%= label_tag :date,
                           'Date:', class: 'control-label' %>
-            <%= date_field_tag :date, params[:date], class: 'form-control'%>
-            <%#= text_field :date, params[:date], class: 'datepicker form-control'%>
+            <%= text_field_tag :date, params[:date], class: 'datepicker form-control'%>
           </div>
 
           <div class="form-group">
-            <%= submit_tag 'Fiter', name: nil, class: 'btn btn-primary'%>
+            <%= submit_tag 'Filter', name: nil, class: 'btn btn-primary'%>
           </div>
           <div class="form-group">
             <%= link_to 'Clear', trips_path, class: 'btn btn-info' %>

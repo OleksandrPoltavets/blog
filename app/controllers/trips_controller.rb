@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     conditions = {}
     conditions[:city_from] = params[:city_from] unless params[:city_from].blank?
     conditions[:city_to] = params[:city_to] unless params[:city_to].blank?
-    conditions[:start] = params[:date] unless params[:date].blank?
+    conditions[:start] = params[:date].to_date unless params[:date].blank?
 
     @trips = @trips.where(conditions)
   end
