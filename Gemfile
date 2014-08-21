@@ -53,7 +53,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.1.1'
 
 gem 'omniauth-facebook'
 #gem 'typeahead-addresspicker-rails'
-
+# gem 'mechanize'
 # Use unicorn as the app server
 # gem 'unicorn'
 

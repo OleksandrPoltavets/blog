@@ -22,6 +22,7 @@ Blog::Application.routes.draw do
   #get "home", to: 'pages#home', as: 'home'
   get 'about', to: 'pages#about', as: 'about'
   get 'contacts', to: 'pages#contacts', as: 'contacts'
+  get 'apps', to: 'pages#apps', as: 'apps'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
