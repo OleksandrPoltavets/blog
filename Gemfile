@@ -62,3 +62,5 @@ gem 'omniauth-facebook'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'newrelic_rpm'
