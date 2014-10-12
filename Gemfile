@@ -64,3 +64,4 @@ gem 'omniauth-facebook'
 # gem 'debugger', group: [:development, :test]
 
 gem 'newrelic_rpm'
+gem 'rails_12factor', group: :production
